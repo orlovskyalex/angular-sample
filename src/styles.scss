@@ -1,3 +1,6 @@
+@import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/utilities';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 html,
@@ -8,4 +11,17 @@ body {
 body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   margin: 0;
+}
+
+// https://github.com/angular/material2/issues/4580#issuecomment-386759677
+mat-form-field {
+  .mat-form-field {
+    &-underline {
+      position: static;
+    }
+
+    &-subscript-wrapper {
+      position: static;
+    }
+  }
 }

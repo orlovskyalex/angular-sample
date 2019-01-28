@@ -1,0 +1,25 @@
+<form [formGroup]="form" class="d-flex flex-column mt-3" (keydown.enter)="submit()">
+  <mat-error class="mb-3" *ngIf="form.hasError('non_field_errors')">
+    {{ form.getError('non_field_errors') }}
+  </mat-error>
+
+  <mat-form-field>
+    <input type="text" matInput formControlName="username" placeholder="Username">
+
+    <mat-error>
+      {{ getFirstControlError(form, 'username') }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="password" matInput formControlName="password" placeholder="Password">
+
+    <mat-error>
+      {{ getFirstControlError(form, 'password', 'password1') }}
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="submit()">
+    Sign In
+  </button>
+</form>

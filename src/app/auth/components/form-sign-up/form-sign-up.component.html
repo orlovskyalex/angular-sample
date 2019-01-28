@@ -1,0 +1,41 @@
+<form [formGroup]="form" class="d-flex flex-column mt-3" (keydown.enter)="submit()">
+  <mat-error class="mb-3" *ngIf="form.hasError('non_field_errors')">
+    {{ form.getError('non_field_errors') }}
+  </mat-error>
+
+  <mat-form-field>
+    <input type="text" matInput formControlName="username" placeholder="Username">
+
+    <mat-hint>
+      Can contain letters, numbers and symbols: @.+-_
+    </mat-hint>
+
+    <mat-error>
+      {{ getFirstControlError(form, 'username') }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="password" matInput formControlName="password1" placeholder="Password">
+
+    <mat-hint>
+      Must contain at least 8 characters and can't be entirely numeric
+    </mat-hint>
+
+    <mat-error>
+      {{ getFirstControlError(form, 'password1') }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="password" matInput formControlName="password2" placeholder="Confirm Password">
+
+    <mat-error>
+      {{ getFirstControlError(form, null, 'password2') }}
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="submit()">
+    Sign Up
+  </button>
+</form>
