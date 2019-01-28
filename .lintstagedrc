@@ -1,0 +1,4 @@
+{
+  "*.ts": "npm run tslint",
+  "*.scss": "npm run sass-lint"
+}

@@ -1,6 +1,6 @@
 {
   "rulesDirectory": [
-    "codelyzer"
+    "node_modules/codelyzer"
   ],
   "rules": {
     "arrow-return-shorthand": true,
@@ -16,10 +16,6 @@
     },
     "eofline": true,
     "forin": true,
-    "import-blacklist": [
-      true,
-      "rxjs/Rx"
-    ],
     "import-spacing": true,
     "indent": [
       true,
@@ -27,6 +23,7 @@
     ],
     "interface-over-type-literal": true,
     "label-position": true,
+    "max-inline-declarations": true,
     "max-line-length": [
       true,
       140
@@ -45,6 +42,7 @@
     ],
     "no-arg": true,
     "no-bitwise": true,
+    "no-consecutive-blank-lines": true,
     "no-console": [
       true,
       "debug",
@@ -56,6 +54,7 @@
     "no-construct": true,
     "no-debugger": true,
     "no-duplicate-super": true,
+    "no-duplicate-variable": true,
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
@@ -65,7 +64,6 @@
     ],
     "no-misused-new": true,
     "no-non-null-assertion": true,
-    "no-redundant-jsdoc": true,
     "no-shadowed-variable": true,
     "no-string-literal": false,
     "no-string-throw": true,
@@ -78,9 +76,9 @@
     "object-literal-sort-keys": false,
     "one-line": [
       true,
-      "check-open-brace",
       "check-catch",
       "check-else",
+      "check-open-brace",
       "check-whitespace"
     ],
     "prefer-const": true,
@@ -91,7 +89,8 @@
     "radix": true,
     "semicolon": [
       true,
-      "always"
+      "always",
+      "ignore-bound-class-methods"
     ],
     "triple-equals": [
       true,
@@ -108,24 +107,21 @@
       }
     ],
     "unified-signatures": true,
-    "variable-name": false,
+    "variable-name": [
+      true,
+      "ban-keywords"
+    ],
     "whitespace": [
       true,
       "check-branch",
       "check-decl",
+      "check-module",
       "check-operator",
+      "check-preblock",
+      "check-rest-spread",
       "check-separator",
-      "check-type"
-    ],
-    "no-output-on-prefix": true,
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-    "component-class-suffix": true,
-    "directive-class-suffix": true
+      "check-type",
+      "check-type-operator"
+    ]
   }
 }
